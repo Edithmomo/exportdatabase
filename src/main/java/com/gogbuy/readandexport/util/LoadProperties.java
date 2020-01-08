@@ -17,7 +17,7 @@ public class LoadProperties {
     /**
      * 配置信息
      */
-    public static HashMap<String, String> map = null;
+    private HashMap<String, String> map = null;
 
     private LoadProperties() {
         System.out.println("加载配置类.....");
@@ -51,4 +51,7 @@ public class LoadProperties {
         return loadProperties;
     }
 
+    public HashMap<String, String> getMap() {
+        return map;
+    }
 }

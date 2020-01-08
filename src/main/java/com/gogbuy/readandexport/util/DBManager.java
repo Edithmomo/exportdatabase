@@ -24,7 +24,7 @@ public class DBManager {
         Connection connection = null;
         try {
             InputStream is = DBManager.class.getClassLoader().getResourceAsStream("dbconfig.properties");
-            HashMap<String, String> map = LoadProperties.getInstance().map;
+            HashMap<String, String> map = LoadProperties.getInstance().getMap();
             String driver = map.get("jdbc.driver");
             String url = map.get("jdbc.url");
             String user = map.get("jdbc.user");

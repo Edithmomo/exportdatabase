@@ -33,7 +33,7 @@ public class ExportToFile {
         Connection conn = DBManager.getConnection();
         try {
             DatabaseMetaData metaData = conn.getMetaData();
-            HashMap<String, String> map = LoadProperties.getInstance().map;
+            HashMap<String, String> map = LoadProperties.getInstance().getMap();
             String database = map.get("jdbc.databasename");
             //查询表的信息
             ResultSet tables = metaData.getTables(database, null, null, new String[]{"TABLE"});
@@ -42,7 +42,7 @@ public class ExportToFile {
                 tableEntity.setName(tables.getString(3));
                 tableEntity.setDescription(tables.getString(5));
                 //查询列的信息
-                ResultSet columns = metaData.getColumns(null, null, tableEntity.getName(), null);
+                ResultSet columns = metaData.getColumns(database, null, tableEntity.getName(), null);
                 ArrayList<ColumnEntity> columnEntities = new ArrayList<ColumnEntity>();
                 while (columns.next()) {
                     ColumnEntity col = new ColumnEntity();
@@ -70,7 +70,7 @@ public class ExportToFile {
      * @return
      */
     public static Boolean writeFile(List<TableEntity> tbs) {
-        String fileName = LoadProperties.getInstance().map.get("file.path");
+        String fileName = LoadProperties.getInstance().getMap().get("file.path");
         StringBuffer sb = new StringBuffer();
         String s = "| Name | Type | Description | PrimaryKey |\n| - | - | - | - | - |\n";
         String s1 = " | ";
