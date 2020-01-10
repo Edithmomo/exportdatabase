@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Properties;
 
 /**
- * @author wangjiameng
+ * @author edith
  * @Description 使用单例模式获取配置  实现一次读取多次使用
  * @date 2020/1/3 16:57
  */
@@ -20,7 +20,6 @@ public class LoadProperties {
     private HashMap<String, String> map = null;
 
     private LoadProperties() {
-        System.out.println("加载配置类.....");
         map = new HashMap<String, String>();
         InputStream is = LoadProperties.class.getClassLoader().getResourceAsStream("dbconfig.properties");
         Properties properties = new Properties();

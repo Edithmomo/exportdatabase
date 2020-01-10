@@ -3,7 +3,7 @@ package com.gogbuy.readandexport.entity;
 import java.util.List;
 
 /**
- * @author wangjiameng
+ * @author edith
  * @Description 数据表实体
  * @date 2020/1/3 16:04
  */

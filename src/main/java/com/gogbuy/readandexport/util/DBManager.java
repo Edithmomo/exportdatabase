@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Properties;
 
 /**
- * @author wangjiameng
+ * @author edith
  * @Description 配置jdbc连接
  * @date 2020/1/3 15:23
  */

@@ -1,7 +1,7 @@
 package com.gogbuy.readandexport.entity;
 
 /**
- * @author wangjiameng
+ * @author edith
  * @Description 数据库列实体
  * @date 2020/1/3 16:05
  */
